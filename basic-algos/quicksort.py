@@ -10,6 +10,7 @@ def quickSort(arr):
 def quickSortInplace(arr, low = 0, high = None):
     if high is None:
         high = len(arr) - 1
+    #确保至少有两个elements，0个会报null，1个没必要排序，直接返回即可
     if low < high:
         pivot_index = partition(arr, low, high)
         quickSortInplace(arr, low, pivot_index - 1)
@@ -22,6 +23,7 @@ def partition(arr, low, high):
         if arr[j] <= pivot:
             i += 1
             arr[i], arr[j] = arr[j], arr[i]
+    #将pivot放在正确的位置
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
