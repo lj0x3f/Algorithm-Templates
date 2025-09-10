@@ -76,7 +76,7 @@ def binary_search_rot(arr, target):
             return mid 
         #判断哪边有序
         #左半边有序
-        if arr[l] < arr[mid]:
+        if arr[l] <= arr[mid]:
             #左半边可以等于，右半边在这里不等于的原因是target == arr[mid]在之前就会被返回，所以不存在这种情况
             #改成 arr[l] <= target <= arr[mid] 结果仍然相同
             if arr[l] <= target < arr[mid]:
